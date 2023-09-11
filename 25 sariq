@@ -1,0 +1,40 @@
+import random as r
+print("1 dan 10 gacha son o\'yladim, topa olasizmi?")
+oylangan = r.randint(1,10)
+n=1
+while True:
+    son = int(input('Son kiriting:'))
+    if son>oylangan:
+        print("Men oylagan son bundan kichikroq")
+        n+=1
+        continue
+    elif son < oylangan: 
+        print("Men oylagan son bundan kattaroq")
+        n+=1
+        continue
+    else:
+        print(f"Topdinggiz, men oylagan son {oylangan} edi! {n}ta taxmin bilan topdinggiz.")
+        break
+print("1 dan 10 gacha son oylang men topishga harakat qilaman")
+m =1
+a=1
+b=10
+while True:
+    taxmin = r.randint(a,b)
+    oyladi= input(f"Siz {taxmin} sonini oyladinggiz. Togri bolsa t, katta bolsa + kichik bolsa - tugmasini bosing")
+    if oyladi == '+':
+        a = taxmin
+        m+=1
+        continue
+    elif oyladi == '-':
+        b= taxmin
+        m+=1
+        continue
+    elif oyladi == 't':
+        print(f"{m}ta taxmin bilan topdim!")
+        break
+if m>n:
+    print(f'Siz yutdinggiz. Hisob {m} : {n}. Sizni hisobinggizga!')
+elif m<n:
+    print(f"Men yutdim {m} : {n}. Meni hisobimga!")
+else: print(f"Durrang {m} : {n}")
